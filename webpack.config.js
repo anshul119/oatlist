@@ -102,7 +102,7 @@ module.exports = environment => {
 			compress: true,
 			publicPath: '/',
 			hot: true,
-			port: 8000,
+			port: 8080,
 			stats: {
 				color: true
 			}

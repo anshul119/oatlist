@@ -49,13 +49,11 @@ export default class UserList extends React.Component<{}, IUserListState> {
 				return new User(userProps);
 			});
 			if (newUserList.length) {
-				console.log('has len', newUserList.length);
 				this.setState(prevState => ({
 					currentOffset: prevState.userList.length + this.limit,
 					userList: prevState.userList.concat(newUserList)
 				}));
 			} else {
-				console.log('no len', newUserList);
 				this.setState({ hasMore: false });
 			}
 		});
@@ -72,7 +70,6 @@ export default class UserList extends React.Component<{}, IUserListState> {
 	};
 
 	renderLoadMoreButton = () => {
-		console.log(this.state.hasMore);
 		return this.state.hasMore ? (
 			<Button onClick={this.loadUsers}>Load More</Button>
 		) : (

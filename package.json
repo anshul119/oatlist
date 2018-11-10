@@ -4,6 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
+		"start": "webpack -p --progress && node server.js",
 		"build": "webpack --display-error-details --mode=production --env production",
 		"serve": "webpack-dev-server --mode=development --hot"
 	},
@@ -11,6 +12,7 @@
 	"author": "Anshul Sharma",
 	"license": "ISC",
 	"dependencies": {
+		"express": "^4.16.4",
 		"geopattern": "^1.2.3",
 		"qs": "^6.5.2",
 		"react": "^16.6.1",
