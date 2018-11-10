@@ -24,8 +24,8 @@ export default class UserList extends React.Component<{}, IUserListState> {
 		});
 	};
 
-	fetchUserList = () => {
-		return api.user.fetchUsers({}).then((response: IUserProps[]) => {
+	fetchUserList = (limit?: number, offset?: number) => {
+		return api.user.fetchUsers({ limit, offset }).then((response: IUserProps[]) => {
 			const userList = response.map((userProps: IUserProps) => {
 				return new User(userProps);
 			});
@@ -34,7 +34,19 @@ export default class UserList extends React.Component<{}, IUserListState> {
 	};
 
 	componentDidMount() {
+		window.addEventListener('scroll', this.handleScroll);
 		this.fetchUserList();
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener('scroll', this.handleScroll);
+	}
+
+	handleScroll() {
+		if (window.innerHeight + document.documentElement!.scrollTop === document.documentElement!.offsetHeight) {
+			console.log('fefrg');
+			this.fetchUserList();
+		}
 	}
 
 	render() {
