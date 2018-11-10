@@ -31,6 +31,12 @@ module.exports = environment => {
 					exclude: /node_modules/,
 					use: [
 						{
+							loader: 'babel-loader',
+							options: {
+								presets: ['es2015', 'react']
+							}
+						},
+						{
 							loader: 'ts-loader'
 						}
 					]
