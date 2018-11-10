@@ -1,4 +1,6 @@
-# [OatList]
+# OatList
+
+Demo: https://oatlist.herokuapp.com/
 
 Oatlist fetches the list of users form OAT list users API. It has been made with React with TypeScript.
 
@@ -7,6 +9,8 @@ By using interfaces and models the application is strongly typed making it very 
 Webpack takes care of all the bundling and other necessary build tasks.
 
 ## Getting Started
+
+Node Version: 10.6.0
 
 For running development build on localhost please install node modules by runnins `npm i` and then run the webpack dev server `npm run serve`.
 
